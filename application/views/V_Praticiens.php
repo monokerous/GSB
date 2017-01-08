@@ -7,17 +7,16 @@
 <header class="header-fixed">
 	<div class="header-limiter">
 		
-	<h1><img src="./css/logoGSB.png" id="logoGSB" alt="Laboratoire Galaxy-Swiss Bourdin" title="Laboratoire Galaxy-Swiss Bourdin" /></h1>	
+            <h1><img src="<?php echo base_url('css/logoGSB.png'); ?>" id="logoGSB" alt="Laboratoire Galaxy-Swiss Bourdin" title="Laboratoire Galaxy-Swiss Bourdin" /></h1>	
 		
 
 		<nav>
 	
 			<a href="#">Comptes-Rendus</a>
 			<a href="#" >Visiteur</a>
-			<a href="C_Praticien/V_Praticiens.php" class="selected">Praticien</a>
-			
-			<a href="<?php  echo site_url('Médicament/index') ?>">Médicament</a>
-			<a href="V_Medicaments.php">Medicaments</a>
+			<a href="<?php echo site_url('praticien/index'); ?>" class="selected">Praticien</a>
+                        
+			<a href="<?php echo site_url('medicament/index'); ?>">Medicaments</a>
 			<a href="#">Quitter</a>
 
 		</nav>
@@ -42,7 +41,7 @@
             
             
             <?php 
-            		/* On récupère le praticiens dans  */
+            		/* On rï¿½cupï¿½re le praticiens dans  */
             if(isset($_POST['practiciens'])){
             	/* On parcours tous les praticiens */
             foreach($query as $item) {

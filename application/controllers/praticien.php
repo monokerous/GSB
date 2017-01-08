@@ -6,7 +6,7 @@ class Praticien extends CI_Controller {
 	//CONSTRUCTEUR PAR DEFAUT DE LA CLASSE Praticien
 
 	public function __construct(){
-		//on appel le constructeur de la classe mère
+		//on appel le constructeur de la classe mï¿½re
 		parent:: __construct();
 		
 	}
@@ -25,6 +25,3 @@ class Praticien extends CI_Controller {
 	}
 }
 
-/* End of file V_Practicien.php */
-/* Location: ./application/controllers/practicien.php */
-?>

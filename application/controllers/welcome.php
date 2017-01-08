@@ -5,17 +5,18 @@ class Welcome extends CI_Controller {
 		//CONSTRUCTEUR PAR DEFAUT DE LA CLASSE Praticien
 
 	public function __construct(){
-		//on appel le constructeur de la classe mère
+		//on appel le constructeur de la classe mï¿½re
 		parent:: __construct();
-		
 	}
-	
+	/**
+         * 
+         */
 	public function index() {
-		
+                
 		$this->load->model('Modele');
 		$data['query'] = $this->Modele->get_Praticien();
 		$this->load->view('V_Praticiens', $data);
-}
+        }
 }
 
 /* End of file welcome.php */

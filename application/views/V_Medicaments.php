@@ -7,14 +7,16 @@
 <header class="header-fixed">
 	<div class="header-limiter">
 		
-	<h1><img src="./css/logoGSB.png" id="logoGSB" alt="Laboratoire Galaxy-Swiss Bourdin" title="Laboratoire Galaxy-Swiss Bourdin" /></h1>	
+	<h1><img src="<?php echo base_url('css/logoGSB.png'); ?>" id="logoGSB" alt="Laboratoire Galaxy-Swiss Bourdin" title="Laboratoire Galaxy-Swiss Bourdin" /></h1>	
 		
 
 		<nav>
+	
 			<a href="#">Comptes-Rendus</a>
 			<a href="#" >Visiteur</a>
-			<a href="V_Praticiens.php" >Praticien</a>
-			<a href="V_Medicaments.php" class="selected">Medicaments</a>
+			<a href="<?php echo site_url('praticien/index'); ?>" >Praticien</a>
+                        
+			<a href="<?php echo site_url('medicament/index'); ?>" class="selected">Medicaments</a>
 			<a href="#">Quitter</a>
 
 		</nav>

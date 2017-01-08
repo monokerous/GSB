@@ -1,5 +1,8 @@
 <?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+
+$root = "http://".$_SERVER['HTTP_HOST'];
+$root .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
 /*
 |--------------------------------------------------------------------------
 | Base Site URL
@@ -14,7 +17,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://127.0.0.1/www/CodeIgniterGSB/';
+$config['base_url']	= $root;
 
 /*
 |--------------------------------------------------------------------------
