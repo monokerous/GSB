@@ -1,5 +1,5 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
-
+require('praticien.php');
 class Welcome extends CI_Controller {
 
 		//CONSTRUCTEUR PAR DEFAUT DE LA CLASSE Praticien
@@ -9,13 +9,11 @@ class Welcome extends CI_Controller {
 		parent:: __construct();
 	}
 	/**
-         * 
+         * Cette méthode appelle la fonction du index du controller  index
          */
 	public function index() {
-                
-		$this->load->model('Modele');
-		$data['query'] = $this->Modele->get_Praticien();
-		$this->load->view('V_Praticiens', $data);
+            $practicien  = new Praticien();
+            $practicien->index();
         }
 }
 
