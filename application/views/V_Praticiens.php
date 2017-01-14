@@ -23,7 +23,7 @@
 	</div>
 </header>
 
- <form method="post" action='' class="form-horizontal">
+ <form method="post" action='' class="form-horizontal" id = "formMedicament">
          <fieldset>
                 <legend>Praticiens</legend>
                 <label class="control-label">Practiens : </label>
@@ -47,12 +47,12 @@
             foreach($query as $item) {
             	/* parcours pour le nom et le prenom et on compare avec le nom que l'on a trouver*/
                 $practicien = $item->PRA_NOM.' '.$item->PRA_PRENOM;
-                
+                	
                    if($practicien == $_POST['practiciens']) { ?>
-		                <form id="formPraticien"> 
+		                <form id="formMedicament"> 
 		                
 		 
-                       		<?php echo $practicien ?>
+                      		<p></p>
 		                	<br>
 			                <label class="titre">NUMERO :</label><label  name="PRA_NUM"  ><?php echo $item->PRA_NUM ?></label>
 			                <br>
@@ -62,11 +62,13 @@
 			                <br>
 			                <label class="titre">ADRESSE :</label><label  name="PRA_ADRESSE"  ><?php echo $item->PRA_ADRESSE ?></label>
 			                <br>
-			                <label class="titre">CP :</label><label  name="PRA_CP" class="zonee" ><?php echo $item->PRA_CP ?></label>
+			                <label class="titre">CODE POSTAL :</label><label  name="PRA_CP" ><?php echo $item->PRA_CP ?></label>
+			                <br>
+			                <label class="titre">VILLE :</label><label name="PRA_VILLE"><?php echo $item->PRA_VILLE?></label>
 			                <br>
 			                <label class="titre">COEFF. NOTORIETE :</label><label  name="PRA_COEFNOTORIETE"  ><?php echo $item->PRA_COEFNOTORIETE ?></label>
 			                <br>
-			                <label class="titre">TYPE :</label><label  name="TYP_CODE" ><?php echo $item->TYP_CODE ?></label>
+			                <label class="titre">TYPE CODE :</label><label  name="TYP_CODE" ><?php echo $item->TYP_CODE ?></label>
 			                <br>
 			               
 		                </form>		

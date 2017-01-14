@@ -17,6 +17,80 @@
 	margin: 0 auto;
 }
 
+/* formMedicament */
+#formMedicament
+{
+	width: 60%;
+}
+
+#formMedicament p
+{
+	margin: 2px 0;
+}
+
+/* fieldset , legend */
+#formMedicament fieldset
+{
+	margin-bottom: 10px;
+	border: #CCC 1px solid;
+}
+
+#formMedicament fieldset:hover
+{
+	background-color: #FFF;
+}
+
+#formMedicament fieldset legend
+{
+	padding: 0 10px;
+	border-left: #CCC 1px solid;
+	border-right: #CCC 1px solid;
+	font-size: 1.2em;
+	color: #999;
+	font:16px Arial, Helvetica, sans-serif;
+}
+
+
+/* Label */
+#formMedicament label
+{
+	background-color:  #608bd2;
+	border: #4BB5C1 1px solid;
+	display: block;
+	width: 39%;
+	float: left;
+	padding-right: 1%;
+	text-align: right;
+	letter-spacing: 1px;
+    font:16px Arial, Helvetica, sans-serif;
+}
+
+#formMedicament label:hover
+{
+	font-weight: bold;
+}
+
+#formMedicament .form_label_nostyle
+{
+	background: none;
+}
+
+
+/* button submit */
+#formMedicament input[type="submit"]
+{
+	border: #4BB5C1 1px solid;
+	width: 27%;
+	font:16px Arial, Helvetica, sans-serif;
+}
+
+#formMedicament input[type="submit"]:hover
+{
+	background-color: #4BB5C1;
+	cursor: pointer;
+}
+
+
 
 /* Logo */
 
@@ -86,3 +160,37 @@ body {
 	padding: 0;
 	height: 1500px;
 }
+
+
+$body-bg: #c1bdba;
+$form-bg: #13232f;
+$white: #ffffff;
+
+$main: #1ab188;
+$main-light: lighten($main,5%);
+$main-dark: darken($main,5%);
+
+$gray-light: #a0b3b0;
+$gray: #ddd;
+
+$thin: 300;
+$normal: 400;
+$bold: 600;
+$br: 4px;
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+	overflow-y: scroll; 
+}
+
+body {
+  background:$body-bg;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+
+
+
