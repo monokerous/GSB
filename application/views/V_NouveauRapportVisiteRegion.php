@@ -57,8 +57,8 @@
 			<td></td>
 			<td><?php echo $rapport->RAP_DATE?></td>
 			<td><?php  echo $rapport->RAP_MOTIF?></td>
-			<td></td>
-			<td></td>
+			<td><?php echo $rapport->MED_NOMCOMMERCIAL;?></td>
+			<td><?php echo $rapport->FAM_CODE;?></td>
 			<td> <input class="bouton" type="submit" value="Rechercher" /></td>
 
 		</tr>
