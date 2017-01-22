@@ -2,6 +2,7 @@
 <head>
 	<title>formulaire MEDICAMENT</title>
 	<link rel="stylesheet" href="<?php echo base_url("css/style.css"); ?>" />
+	<meta charset="UTF-8">
 </head>
 
 <header class="header-fixed">
@@ -13,7 +14,7 @@
 		<nav>
 	
 			<a href="#">Comptes-Rendus</a>
-			<a href="#" >Visiteur</a>
+			<a href="<?php echo site_url('nouveauRapportVisiteurRegion/nouveauRapport'); ?>" >Visiteur</a>
 			<a href="<?php echo site_url('praticien/index'); ?>" >Praticien</a>
                         
 			<a href="<?php echo site_url('medicament/index'); ?>" class="selected">Medicaments</a>
@@ -27,8 +28,8 @@
 
 <form method="post" action='' class="form-horizontal" id ="formMedicament">
          <fieldset>
-                <legend>M�dicaments</legend>
-                <label class="control-label">M�dicaments : </label>
+                <legend>Médicaments</legend>
+                <label class="control-label">Médicaments : </label>
               
             <select name="medicament">
       		<?php $selected = '';?>
@@ -42,11 +43,11 @@
             
             
             <?php 
-            		/* On recupère le medicament  */
+            		/* On r�cup�re le praticiens dans  */
             if(isset($_POST['medicament'])){
-            	/* On parcours tous les medicaments */
+            	/* On parcours tous les praticiens */
             foreach($query as $item) {
-            	/* parcours pour le nom et on compare avec le nom que l'on a trouver*/
+            	/* parcours pour le nom et le prenom et on compare avec le nom que l'on a trouver*/
                 $medicament = $item->MED_NOMCOMMERCIAL;
                 
                    if($medicament == $_POST['medicament']) { ?>

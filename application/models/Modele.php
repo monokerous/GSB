@@ -6,7 +6,13 @@
 	   function get_Praticien() {
 	   	$sql = "SELECT * FROM praticien order by PRA_NOM ASC";
 	   	$query = $this->db->query($sql);
-	   	//Cette méthode renvoie le résultat de la requête sous la forme d'un tableau d'objets result();
+	   	//Cette mï¿½thode renvoie le rï¿½sultat de la requï¿½te sous la forme d'un tableau d'objets result();
+	   	return $query->result();
+	   }
+	   
+	   function get_Num_Nom_Praticien(){
+	   	$sql = "SELECT PRA_NUM, PRA_NOM FROM praticien";
+	   	$query = $this->db->query($sql);
 	   	return $query->result();
 	   }
 	   
@@ -18,8 +24,25 @@
 	   	return $query->result();
 	   
 	   }
-   
- 
+	   
+	   //NOUVEAU RAPPORT PAR REGION
+	   function get_Num_Rapport()
+	   {
+	   	$sql = "SELECT RAP_NUM FROM rapport_visite";
+	   	$query = $this->db->query($sql);
+	   	return $query->result();
+	   }
+	   function get_Rapport(){
+	   	$sql = "SELECT * FROM rapport_visite ORDER BY RAP_DATE DESC ";
+	   	$query = $this->db->query($sql);
+	   	return $query->result();
+	   }
+	   
+	   function get_Nom_Visiteur(){
+	   	$sql = "SELECT VIS_NOM FROM visiteur";
+	   	$query = $this->db->query($sql);
+	   	return $query->result();
+	   }
    
    }
     

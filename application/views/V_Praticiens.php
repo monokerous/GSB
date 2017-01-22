@@ -2,6 +2,7 @@
 <head>
 	<title>formulaire PRATICIEN</title>
 	<link rel="stylesheet" href="<?php echo base_url("css/style.css"); ?>" />
+	<meta charset="UTF-8">
 </head>
 
 <header class="header-fixed">
@@ -13,7 +14,7 @@
 		<nav>
 	
 			<a href="#">Comptes-Rendus</a>
-			<a href="#" >Visiteur</a>
+			<a href=<?php echo site_url('nouveauRapportVisiteurRegion/nouveauRapport'); ?> >Visiteur</a>
 			<a href="<?php echo site_url('praticien/index'); ?>" class="selected">Praticien</a>
                         
 			<a href="<?php echo site_url('medicament/index'); ?>">Medicaments</a>
