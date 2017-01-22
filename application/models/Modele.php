@@ -32,8 +32,8 @@
 	   	$query = $this->db->query($sql);
 	   	return $query->result();
 	   }
-	   function get_Rapport(){
-	   	$sql = "SELECT * FROM rapport_visite ORDER BY RAP_DATE DESC ";
+	    function get_Rapport(){
+	   	$sql = "SELECT * FROM rapport_visite, visiteur WHERE visiteur.VIS_MATRICULE = rapport_visite.VIS_MATRICULE ORDER BY RAP_DATE DESC ";
 	   	$query = $this->db->query($sql);
 	   	return $query->result();
 	   }

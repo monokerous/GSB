@@ -52,7 +52,7 @@
 	foreach ($query as $rapport) { ?>
 		<tr>
 			<td><?php echo $rapport->RAP_NUM; ?></td>
-			<td></td>
+			<td><?php echo $rapport->VIS_NOM; ?></td>
 			<td></td>
 			<td></td>
 			<td><?php echo $rapport->RAP_DATE?></td>
