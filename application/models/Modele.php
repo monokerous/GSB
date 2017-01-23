@@ -33,7 +33,11 @@
 	   	return $query->result();
 	   }
 	    function get_Rapport(){
-	   	$sql = "SELECT * FROM rapport_visite, visiteur,offrir,medicament WHERE visiteur.VIS_MATRICULE = rapport_visite.VIS_MATRICULE AND medicament.MED_DEPOTLEGAL = offrir.MED_DEPOTLEGAL ORDER BY RAP_DATE DESC ";
+	   	$sql = "SELECT * FROM rapport_visite, visiteur, offrir, medicament, praticien WHERE "
+                        . "praticien.PRA_NUM=rapport_visite.PRA_NUM "
+                        . "AND visiteur.VIS_MATRICULE = rapport_visite.VIS_MATRICULE "
+                        . "AND medicament.MED_DEPOTLEGAL = offrir.MED_DEPOTLEGAL "
+                        . "ORDER BY RAP_DATE DESC ";
 	   	$query = $this->db->query($sql);
 	   	return $query->result();
 	   }
