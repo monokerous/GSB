@@ -33,6 +33,7 @@
   <h3><?php echo count($query); ?> Rapports : </h3>
   
   <table>
+  <form action="<?php echo site_url('nouveauRapportVisiteurRegion/index'); ?>" method="post" name = "listeRapport">
   	<tr>
   		
   		<th>Numero du Rapport</th>
@@ -49,25 +50,27 @@
   	
 <?php
 	//Affichage des contacts
-	foreach ($query as $rapport) { ?>
+	foreach ($query as $unRapport) { ?>
 		<tr>
-			<td><?php echo $rapport->RAP_NUM; ?></td>
-			<td><?php echo $rapport->VIS_NOM;?></td>
-			<td><?php echo $rapport->PRA_NUM;?></td>
-			<td><?php echo $rapport->PRA_NOM;?></td>
-			<td><?php echo $rapport->RAP_DATE?></td>
-			<td><?php  echo $rapport->RAP_MOTIF?></td>
-			<td><?php echo $rapport->FAM_CODE;?></td>
-			<td><?php echo $rapport->MED_NOMCOMMERCIAL;?></td>
-			<td> <input class="bouton" type="submit" value="Rechercher" /></td>
+			<td><?php echo $unRapport->RAP_NUM; ?></td>
+			<td><?php echo $unRapport->VIS_NOM;?></td>
+			<td><?php echo $unRapport->PRA_NUM;?></td>
+			<td><?php echo $unRapport->PRA_NOM;?></td>
+			<td><?php echo $unRapport->RAP_DATE;?></td>
+			<td><?php  echo $unRapport->RAP_MOTIF;?></td>
+			<td><?php echo $unRapport->FAM_CODE;?></td>
+			<td><?php echo $unRapport->MED_NOMCOMMERCIAL;?></td>
+			<td><input class="bouton" type="submit" value="Rechercher" /> </td>
+
 
 		</tr>
 <?php
 	}
 ?>
+
+<input type="hidden"  value="<?php echo $unRapport->RAP_NUM; echo $unRapport->VIS_NOM; echo $unRapport->PRA_NUM; echo $unRapport->PRA_NOM;echo $unRapport->RAP_DATE; echo $unRapport->RAP_MOTIF; echo $unRapport->FAM_CODE; echo $unRapport->MED_NOMCOMMERCIAL; ?>">
+</form>
 </table>
 
-
-  
 </body>
 </html>

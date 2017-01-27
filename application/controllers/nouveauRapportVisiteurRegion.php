@@ -12,7 +12,9 @@ class NouveauRapportVisiteurRegion extends CI_Controller
 	
 	function index() {
 		$this->load->model('Modele');
-		$this->load->view('V_RapportVisite.php');
+		//	$select = $_POST['listeVisiteur'];
+		$data['query'] = $this->Modele->get_Rapport();
+		$this->load->view('V_SelectUneRegion.php',$data);
 		
 	}
 	
@@ -24,7 +26,13 @@ class NouveauRapportVisiteurRegion extends CI_Controller
 		$data['nomVisiteur'] = $this->Modele->get_Nom_Visiteur();
 		$data['NumNomPraticien'] = $this->Modele->get_Praticien();		
 		$data['Medicaments'] = $this->Modele->get_Medicament();
-		$this->load->view('V_NouveauRapportVisiteRegion.php',$data);
+		$this->load->view('V_SelectUneRegion.php',$data);
+	}
+
+	function selectUneRegion(){
+		$this->load->model('Modele');
+		$data['query'] = $this->Modele->get_Region();
+		$this->load->view('V_SelectUneRegion.php',$data);
 	}
 	
 

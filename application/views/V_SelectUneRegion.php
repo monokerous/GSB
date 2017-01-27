@@ -1,6 +1,6 @@
 <html> 
 <head>
-	<title>formulaire PRATICIEN</title>
+	<title>Select region</title>
 	<link rel="stylesheet" href="<?php echo base_url("css/style.css"); ?>" />
 	<meta charset="UTF-8">
 </head>
@@ -14,8 +14,8 @@
 		<nav>
 	
 			<a href="#">Comptes-Rendus</a>
-			<a href=<?php echo site_url('nouveauRapportVisiteurRegion/selectUneRegion'); ?> >Visiteur</a>
-			<a href="<?php echo site_url('praticien/index'); ?>" class="selected">Praticien</a>
+			<a href=<?php echo site_url('nouveauRapportVisiteurRegion/selectUneRegion'); ?> class="selected">Visiteur</a>
+			<a href="<?php echo site_url('praticien/index'); ?>" >Praticien</a>
                         
 			<a href="<?php echo site_url('medicament/index'); ?>">Medicaments</a>
 			<a href="#">Quitter</a>
@@ -24,32 +24,31 @@
 	</div>
 </header>
 
- <form method="post" action='' class="form-horizontal" id = "formMedicament">
+ <form method="post" action='nouveauRapportVisiteurRegion/nouveauRapport' class="form-horizontal" id = "formMedicament">
          <fieldset>
-                <legend>Praticiens</legend>
-                <label class="control-label">Practiens : </label>
+                <legend>Selectionnez une région</legend>
+                <label class="control-label">Région : </label>
               
-            <select name="practiciens">
+            <select name="regions">
       		<?php $selected = '';?>
                 <?php foreach($query as $item) { ?>
 
-                    <?php echo '<option value="'.$item->PRA_NOM.' '.$item->PRA_PRENOM.'" $selected>'. $item->PRA_NOM.' '.$item->PRA_PRENOM .'</option>';?>
+                    <?php echo '<option value="'.$item->REG_NOM.'" $selected>'. $item->REG_NOM.'</option>';?>
 
 				<?php } ?>
            
             </select>
             <input class="btn" type="submit" value="Rechercher" />
-            
-            
-            <?php 
+
+<?php 
             		/* On r�cup�re le praticiens dans  */
-            if(isset($_POST['practiciens'])){
+            if(isset($_POST['regions'])){
             	/* On parcours tous les praticiens */
             foreach($query as $item) {
             	/* parcours pour le nom et le prenom et on compare avec le nom que l'on a trouver*/
-                $practicien = $item->PRA_NOM.' '.$item->PRA_PRENOM;
+                $region = $item->REG_NOM;
                 	
-                   if($practicien == $_POST['practiciens']) { ?>
+                   if( $_POST['regions']) { ?>
 		                <form id="formMedicament"> 
 		                
 		 
@@ -76,8 +75,8 @@
                 <?php }
             }
        }?>	
-            </fieldset>
-        </form>
- 
-</body>
-</html>
+             
+		                
+ </fieldset>
+ </form>
+ </html>

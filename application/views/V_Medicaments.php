@@ -14,7 +14,7 @@
 		<nav>
 	
 			<a href="#">Comptes-Rendus</a>
-			<a href="<?php echo site_url('nouveauRapportVisiteurRegion/nouveauRapport'); ?>" >Visiteur</a>
+			<a href="<?php echo site_url('nouveauRapportVisiteurRegion/selectUneRegion'); ?>" >Visiteur</a>
 			<a href="<?php echo site_url('praticien/index'); ?>" >Praticien</a>
                         
 			<a href="<?php echo site_url('medicament/index'); ?>" class="selected">Medicaments</a>

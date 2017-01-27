@@ -37,6 +37,8 @@
                         . "praticien.PRA_NUM=rapport_visite.PRA_NUM "
                         . "AND visiteur.VIS_MATRICULE = rapport_visite.VIS_MATRICULE "
                         . "AND medicament.MED_DEPOTLEGAL = offrir.MED_DEPOTLEGAL "
+
+                       
                         . "ORDER BY RAP_DATE DESC ";
 	   	$query = $this->db->query($sql);
 	   	return $query->result();
@@ -46,6 +48,14 @@
 	   	$sql = "SELECT VIS_NOM FROM visiteur";
 	   	$query = $this->db->query($sql);
 	   	return $query->result();
+	   }
+
+	   function get_Region(){
+
+	   	$sql = "SELECT * FROM region";
+	   	$query = $this->db->query($sql);
+	   	return $query->result();
+
 	   }
    
    }
