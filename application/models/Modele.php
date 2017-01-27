@@ -50,12 +50,34 @@
 	   	return $query->result();
 	   }
 
-	   function get_Region(){
+	   /**
+		* Cette méthode retourne tous les régions
+		* @return array
+		*/
+	   public function get_Region(){
 
 	   	$sql = "SELECT * FROM region";
 	   	$query = $this->db->query($sql);
 	   	return $query->result();
 
+	   }
+
+	   /**
+		* Cette méthode retourne des rapport par région
+		* @param null|string $reg_code
+		* @return array
+		*/
+	   public function getRapportRegion($reg_code = NULL){
+
+	   		$sql = 'SELECT RAP_MOTIF, praticien.PRA_NUM, PRA_NOM, PRA_PRENOM, PRA_ADRESSE, PRA_CP, PRA_VILLE, PRA_COEFNOTORIETE, TYP_CODE, RAP_MOTIF, TRA_ROLE
+					FROM region, travailler, visiteur, rapport_visite, praticien
+					WHERE region.REG_CODE=travailler.REG_CODE
+					AND travailler.VIS_MATRICULE=visiteur.VIS_MATRICULE
+					AND rapport_visite.VIS_MATRICULE=visiteur.VIS_MATRICULE
+					AND rapport_visite.PRA_NUM = praticien.PRA_NUM
+					AND region.REG_CODE = ?';
+		   $query = $this->db->query($sql, array($reg_code));
+		   return $query->result();
 	   }
    
    }
