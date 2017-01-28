@@ -69,13 +69,15 @@
 		*/
 	   public function getRapportRegion($reg_code = NULL){
 
-	   		$sql = 'SELECT RAP_MOTIF, praticien.PRA_NUM, PRA_NOM, PRA_PRENOM, PRA_ADRESSE, PRA_CP, PRA_VILLE, PRA_COEFNOTORIETE, TYP_CODE, RAP_MOTIF, TRA_ROLE
-					FROM region, travailler, visiteur, rapport_visite, praticien
+	   		$sql = 'SELECT VIS_NOM, rapport_visite.RAP_NUM, RAP_DATE, RAP_MOTIF, praticien.PRA_NUM, PRA_NOM,  PRA_COEFNOTORIETE, TYP_CODE, RAP_MOTIF, TRA_ROLE,medicament.MED_DEPOTLEGAL,MED_NOMCOMMERCIAL
+					FROM region, travailler, visiteur, rapport_visite, praticien, offrir,medicament
 					WHERE region.REG_CODE=travailler.REG_CODE
 					AND travailler.VIS_MATRICULE=visiteur.VIS_MATRICULE
 					AND rapport_visite.VIS_MATRICULE=visiteur.VIS_MATRICULE
 					AND rapport_visite.PRA_NUM = praticien.PRA_NUM
-					AND region.REG_CODE = ?';
+					AND medicament.MED_DEPOTLEGAL = offrir.MED_DEPOTLEGAL 
+					AND region.REG_CODE = ?
+					ORDER BY RAP_DATE DESC ';
 		   $query = $this->db->query($sql, array($reg_code));
 		   return $query->result();
 	   }

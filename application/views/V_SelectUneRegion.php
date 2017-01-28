@@ -48,37 +48,41 @@
  </form>
 <?php 
             		/* On r�cup�re le praticiens dans  */
-            if($regions){
+            if($regions){ ?>
+
+            	<table>
+ 					 <form action="" method="post" name = "listeRapport">
+	  					<tr>
+				  		
+				  		<th>Numero du Rapport</th>
+				  		<th>Nom du Visiteur</th>
+				  		<th>Numero du Praticien</th>
+				  		<th>Nom du Praticien</th>
+				  		<th>Date du Rapport</th>
+				  		<th>Motif</th>
+				  		<th>Code Medicaments</th>
+				  		<th>Nom Medicaments</th>
+				  		<th>Détail du rapport de visite</th>
+				  		
+					  	</tr>
+					 <?php
+
             	/* On parcours tous les praticiens */
 				foreach($queryRapport as $item) {
 					/* parcours pour le nom et le prenom et on compare avec le nom que l'on a trouver*/
 					?>
-						<form id="formMedicament">
-
-
-							<p></p>
-							<br>
-							<label class="titre">NUMERO :</label><label  name="PRA_NUM"  ><?php echo $item->PRA_NUM ?></label>
-							<br>
-							<label class="titre">NOM :</label><label name="PRA_NOM" ><?php echo $item->PRA_NOM ?></label>
-							<br>
-							<label class="titre">PRENOM :</label><label name="PRA_PRENOM" ><?php echo $item->PRA_PRENOM ?></label>
-							<br>
-							<label class="titre">ADRESSE :</label><label  name="PRA_ADRESSE"  ><?php echo $item->PRA_ADRESSE ?></label>
-							<br>
-							<label class="titre">CODE POSTAL :</label><label  name="PRA_CP" ><?php echo $item->PRA_CP ?></label>
-							<br>
-							<label class="titre">VILLE :</label><label name="PRA_VILLE"><?php echo $item->PRA_VILLE?></label>
-							<br>
-							<label class="titre">COEFF. NOTORIETE :</label><label  name="PRA_COEFNOTORIETE"  ><?php echo $item->PRA_COEFNOTORIETE ?></label>
-							<br>
-							<label class="titre">TYPE CODE :</label><label  name="TYP_CODE" ><?php echo $item->TYP_CODE ?></label>
-							<br>
-							<label class="titre">Rapport Motif :</label><label  name="RAP_MOTIF" ><?php echo $item->RAP_MOTIF ?></label>
-							<br>
-							<label class="titre">Role :</label><label  name="TRA_ROLE" ><?php echo $item->TRA_ROLE ?></label>
-							<br>
-						</form>
+						
+					<tr>
+							<td><?php echo $item->RAP_NUM; ?></td>
+							<td><?php echo $item->VIS_NOM;?></td>
+							<td><?php echo $item->PRA_NUM;?></td>
+							<td><?php echo $item->PRA_NOM;?></td>
+							<td><?php echo $item->RAP_DATE;?></td>
+							<td><?php  echo $item->RAP_MOTIF;?></td>
+							<td><?php echo $item->MED_DEPOTLEGAL;?></td>
+							<td><?php echo $item->MED_NOMCOMMERCIAL;?></td>
+							<td><input class="bouton" type="submit" value="Rechercher" /> </td>
+					</tr>
 					<?php
 
 				}
