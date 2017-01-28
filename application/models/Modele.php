@@ -77,7 +77,7 @@
 					AND rapport_visite.PRA_NUM = praticien.PRA_NUM
 					AND medicament.MED_DEPOTLEGAL = offrir.MED_DEPOTLEGAL 
 					AND region.REG_CODE = ?
-					ORDER BY RAP_DATE DESC ';
+					ORDER BY RAP_DATE DESC';
 		   $query = $this->db->query($sql, array($reg_code));
 		   return $query->result();
 	   }

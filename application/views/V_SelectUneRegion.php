@@ -51,7 +51,7 @@
             if($regions){ ?>
 
             	<table>
- 					 <form action="" method="post" name = "listeRapport">
+ 					 <form action="<?php echo site_url('nouveauRapportVisiteurRegion/nouveauRapport'); ?>" method="post" name = "listeRapport">
 	  					<tr>
 				  		
 				  		<th>Numero du Rapport</th>
@@ -86,6 +86,9 @@
 					<?php
 
 				}
+				?>
+				<input type="hidden"  value="<?php echo $item->RAP_NUM; echo $item->VIS_NOM; echo $item->PRA_NUM; echo $item->PRA_NOM;echo $item->RAP_DATE; echo $item->RAP_MOTIF; echo $item->MED_DEPOTLEGAL; echo $item->MED_NOMCOMMERCIAL; ?>"> 
+				<?php
        		}
        ?>
 

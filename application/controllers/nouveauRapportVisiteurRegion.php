@@ -16,7 +16,7 @@ class NouveauRapportVisiteurRegion extends CI_Controller
 	function index() {
         $data = $this->_data_defaut;
 		$data['queryRapport'] = $this->Modele->get_Rapport();
-		$this->load->view('V_SelectUneRegion.php',$data);
+		$this->load->view('V_UnRapportVisite.php',$data);
 		
 	}
 	
