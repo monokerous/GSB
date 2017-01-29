@@ -28,8 +28,17 @@ class NouveauRapportVisiteurRegion extends CI_Controller
 	}
 
 	function selectUneRegion(){
-        $data = $this->_data_defaut;$this->load->view('V_SelectUneRegion.php', $data);
+        $data = $this->_data_defaut;
+        $this->load->view('V_SelectUneRegion.php', $data);
 	}
+
+	function unRapportDeVisite(){
+		$data = $this->_data_defaut;
+	//	$data= $this->input->post('listeRapport'); 
+		$data['queryRapport'] = $this->Modele->get_Rapport();	
+		$this->load->view('V_UnRapportVisite',$data);
+	}
+	
 	
 
 	

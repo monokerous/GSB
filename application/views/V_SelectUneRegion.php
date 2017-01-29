@@ -14,9 +14,9 @@
 
 		<nav>
 	
-			<a href="#">Comptes-Rendus</a>
-			<a href=<?php echo site_url('nouveauRapportVisiteurRegion/selectUneRegion'); ?> class="selected">Visiteur</a>
-			<a href="<?php echo site_url('praticien/index'); ?>" >Praticien</a>
+		
+			<a href=<?php echo site_url('nouveauRapportVisiteurRegion/selectUneRegion'); ?> class="selected">Nouveau rapport visite par région</a>
+			<a href="<?php echo site_url('praticien/index'); ?>" >Historique des rapports par région</a>
                         
 			<a href="<?php echo site_url('medicament/index'); ?>">Medicaments</a>
 			<a href="#">Quitter</a>
@@ -51,7 +51,7 @@
             if($regions){ ?>
 
             	<table>
- 					 <form action="<?php echo site_url('nouveauRapportVisiteurRegion/nouveauRapport'); ?>" method="post" name = "listeRapport">
+ 					 <form action="<?php echo site_url('nouveauRapportVisiteurRegion/unRapportDeVisite'); ?>" method="post" name = "listeRapport">
 	  					<tr>
 				  		
 				  		<th>Numero du Rapport</th>
