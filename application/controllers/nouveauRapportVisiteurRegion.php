@@ -36,10 +36,10 @@ class NouveauRapportVisiteurRegion extends CI_Controller
     /**
      * Cette méthode permet de voir un rapport précis
      */
-	function unRapportDeVisite(){
+	function unRapportDeVisite($idRapport = 0){
         $this->load->model('Modele');
 		$data = array();
-		$rapport = $this->Modele->getOneRapport(intval($this->input->get_post('listeRapport')));
+		$rapport = $this->Modele->getOneRapport($idRapport);
         if(is_null($rapport)){
             redirect('/NouveauRapportVisiteurRegion/index', 'refresh');
         }

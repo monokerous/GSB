@@ -51,7 +51,7 @@
             if($regions){ ?>
 
             	<table>
- 					 <form action="<?php echo site_url('nouveauRapportVisiteurRegion/unRapportDeVisite'); ?>" method="post" name = "listeRapport" id = "listeRapport">
+
 	  					<tr>
 				  		
 				  		<th>Numero du Rapport</th>
@@ -81,8 +81,10 @@
 							<td><?php  echo $item->RAP_MOTIF;?></td>
 							<td><?php echo $item->MED_DEPOTLEGAL;?></td>
 							<td><?php echo $item->MED_NOMCOMMERCIAL;?></td>
-							<input id="listeRapport" name="listeRapport" type="hidden" value="<?php echo $item->RAP_NUM; ?>">
-							<td><input class="bouton" type="submit" value="Rechercher" /> </td>
+							<td>
+							<a style="text-decoration:underline;color:#00F;" href="<?php echo site_url('NouveauRapportVisiteurRegion/unRapportDeVisite/'.$item->RAP_NUM); ?>">rechercher</a>
+
+							</td>
 
 					</tr>
 					<?php
