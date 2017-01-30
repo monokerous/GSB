@@ -14,9 +14,10 @@ class NouveauRapportVisiteurRegion extends CI_Controller
 	}
 	
 	function index() {
-        $data = $this->_data_defaut;
+        redirect('/NouveauRapportVisiteurRegion/selectUneRegion', 'refresh');
+        /*$data = $this->_data_defaut;
 		$data['queryRapport'] = $this->Modele->get_Rapport();
-		$this->load->view('V_UnRapportVisite.php',$data);
+		$this->load->view('V_UnRapportVisite.php',$data);*/
 		
 	}
 	
@@ -32,11 +33,17 @@ class NouveauRapportVisiteurRegion extends CI_Controller
         $this->load->view('V_SelectUneRegion.php', $data);
 	}
 
+    /**
+     * Cette méthode permet de voir un rapport précis
+     */
 	function unRapportDeVisite(){
-		$data = $this->_data_defaut;
-		$data = $this->input->get_post('listeRapport');
-	//	$data= $this->input->post('listeRapport'); 
-	//	$data['queryRapport'] = $this->Modele->get_Rapport();	
+        $this->load->model('Modele');
+		$data = array();
+		$rapport = $this->Modele->getOneRapport(intval($this->input->get_post('listeRapport')));
+        if(is_null($rapport)){
+            redirect('/NouveauRapportVisiteurRegion/index', 'refresh');
+        }
+        $data["rapport"] = $rapport;
 		$this->load->view('V_UnRapportVisite',$data);
 	}
 	

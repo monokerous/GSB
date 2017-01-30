@@ -81,6 +81,22 @@
 		   $query = $this->db->query($sql, array($reg_code));
 		   return $query->result();
 	   }
+
+	   /**
+		* Cette méthode retourne un rapport par son numéro
+		* @param int $num
+		* @return array|null
+		*/
+	   public function getOneRapport($num){
+		   $rapport = null;
+		   $sql = 'SELECT * FROM rapport_visite WHERE rapport_visite.RAP_NUM=?';
+		   $query = $this->db->query($sql, array($num));
+
+		   if ($query->num_rows() > 0) { //si la requete retourne plusieur résultat
+			   $rapport = $query->row();
+		   }
+			return $rapport;
+	   }
    
    }
     

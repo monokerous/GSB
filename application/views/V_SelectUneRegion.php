@@ -81,7 +81,7 @@
 							<td><?php  echo $item->RAP_MOTIF;?></td>
 							<td><?php echo $item->MED_DEPOTLEGAL;?></td>
 							<td><?php echo $item->MED_NOMCOMMERCIAL;?></td>
-							<input id="listeRapport" name="listeRapport" type="hidden" value="'.$item->RAP_NUM.'">
+							<input id="listeRapport" name="listeRapport" type="hidden" value="<?php echo $item->RAP_NUM; ?>">
 							<td><input class="bouton" type="submit" value="Rechercher" /> </td>
 
 					</tr>

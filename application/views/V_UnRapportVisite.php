@@ -3,6 +3,7 @@
 	<title>Un rapport par région</title>
 	<link rel="stylesheet" href="<?php echo base_url("css/style.css"); ?>" />
 	<meta charset="UTF-8">
+
 </head>
 
 <header class="header-fixed">
@@ -28,8 +29,15 @@
 
 
 <p></p>
-		
-	<?php 
+	<div>
+		<?php
+
+			echo $rapport->RAP_NUM.'<br>';
+			echo '<pre>'.$rapport->RAP_MOTIF.'</pre>';
+		?>
+	</div>
+	<?php
+	/*
 	if (isset($_POST['listeRapport'])) { 
 		foreach ($queryRapport as $item) {
 		?>
@@ -77,6 +85,7 @@
 
  <?php }
  }
+	*/
   ?> 
 
 
