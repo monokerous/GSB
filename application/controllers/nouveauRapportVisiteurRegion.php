@@ -34,8 +34,9 @@ class NouveauRapportVisiteurRegion extends CI_Controller
 
 	function unRapportDeVisite(){
 		$data = $this->_data_defaut;
+		$data = $this->input->get_post('listeRapport');
 	//	$data= $this->input->post('listeRapport'); 
-		$data['queryRapport'] = $this->Modele->get_Rapport();	
+	//	$data['queryRapport'] = $this->Modele->get_Rapport();	
 		$this->load->view('V_UnRapportVisite',$data);
 	}
 	

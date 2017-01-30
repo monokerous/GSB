@@ -30,9 +30,11 @@
 <p></p>
 		
 	<?php 
-	foreach ($queryRapport as $item) { ?>
+	if (isset($_POST['listeRapport'])) { 
+		foreach ($queryRapport as $item) {
+		?>
 
-	<label class="titre">NUMERO :</label><label  name="RAP_NUM"  ><?php echo $item->RAP_NUM ?></label>
+			<label class="titre">NUMERO :</label><label  name="RAP_NUM"  ><?php echo $item->RAP_NUM ?></label>
 		<br>
 		<label class="titre">DATE VISITE :</label><label  name="RAP_DATE"  ><?php echo $item->RAP_DATE ?></label>
 		<br>
@@ -71,6 +73,12 @@
 		<label class="titre">SAISIE DEFINITIVE :</label><input name="RAP_LOCK" type="checkbox" class="zone" checked="false" />
 		<br>
 		<label class="titre"></label><div class="zone"><input type="reset" value="Annuler"></input><input type="submit"></input>
+		<br><br>
 
- <?php } ?> 
+ <?php }
+ }
+  ?> 
+
+
+	
 </body>
