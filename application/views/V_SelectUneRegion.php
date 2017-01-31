@@ -16,7 +16,7 @@
 	
 		
 			<a href=<?php echo site_url('nouveauRapportVisiteurRegion/selectUneRegion'); ?> class="selected">Nouveau rapport visite par région</a>
-			<a href="<?php echo site_url('praticien/index'); ?>" >Historique des rapports par région</a>
+			<a href="<?php echo site_url('historiqueRapportVisiteurRegion/selectUneRegion'); ?>" >Historique des rapports par région</a>
                         
 			<a href="<?php echo site_url('medicament/index'); ?>">Medicaments</a>
 			<a href="#">Quitter</a>
@@ -94,6 +94,9 @@
 				
 				
 				<?php
+       		}
+       		else{
+       			echo "aucune fiche de frais";
        		}
        ?>
 

@@ -89,7 +89,11 @@
 		*/
 	   public function getOneRapport($num){
 		   $rapport = null;
-		   $sql = 'SELECT * FROM rapport_visite WHERE rapport_visite.RAP_NUM=?';
+		   $sql = 'SELECT * 
+		   		   FROM rapport_visite, visiteur
+		   		   WHERE rapport_visite.VIS_MATRICULE = visiteur.VIS_MATRICULE
+		   		   AND rapport_visite.RAP_NUM=?';
+
 		   $query = $this->db->query($sql, array($num));
 
 		   if ($query->num_rows() > 0) { //si la requete retourne plusieur résultat
@@ -97,6 +101,8 @@
 		   }
 			return $rapport;
 	   }
+
+	   // HISTORIQUE DES RAPPORT PAR REGION
    
    }
     
