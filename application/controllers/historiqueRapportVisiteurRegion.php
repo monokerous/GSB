@@ -3,6 +3,7 @@
 
 class HistoriqueRapportVisiteurRegion extends CI_Controller
 {
+	// tableau de données
 	private $_data_defaut = array();
 	function __construct()
 	{
@@ -14,7 +15,7 @@ class HistoriqueRapportVisiteurRegion extends CI_Controller
 	}
 	
 	function index() {
-        redirect('/NouveauRapportVisiteurRegion/selectUneRegion', 'refresh');
+        redirect('/historiqueRapportVisiteurRegion/selectUneRegion', 'refresh');
         /*$data = $this->_data_defaut;
 		$data['queryRapport'] = $this->Modele->get_Rapport();
 		$this->load->view('V_UnRapportVisite.php',$data);*/
@@ -25,6 +26,13 @@ class HistoriqueRapportVisiteurRegion extends CI_Controller
 	function selectUneRegion(){
         $data = $this->_data_defaut;
         $this->load->view('V_SelectHistoriqueUneRegion.php', $data);
+	}
+	
+
+	function selectUneDate(){
+		$data = $this->_data_defaut;
+		$data['queryDate'] = $this->Modele->getDate($data['regions']);
+		$this->load->view('V_SelectHistoriqueUneRegion.php',$data);
 	}
 	
 }

@@ -6,7 +6,7 @@
 	   function get_Praticien() {
 	   	$sql = "SELECT * FROM praticien order by PRA_NOM ASC";
 	   	$query = $this->db->query($sql);
-	   	//Cette m�thode renvoie le r�sultat de la requ�te sous la forme d'un tableau d'objets result();
+	   	//Cette mï¿½thode renvoie le rï¿½sultat de la requï¿½te sous la forme d'un tableau d'objets result();
 	   	return $query->result();
 	   }
 	   
@@ -51,7 +51,7 @@
 	   }
 
 	   /**
-		* Cette méthode retourne tous les régions
+		* Cette mÃ©thode retourne tous les rÃ©gions
 		* @return array
 		*/
 	   public function get_Region(){
@@ -63,7 +63,7 @@
 	   }
 
 	   /**
-		* Cette méthode retourne des rapport par région
+		* Cette mÃ©thode retourne des rapport par rÃ©gion
 		* @param null|string $reg_code
 		* @return array
 		*/
@@ -83,7 +83,7 @@
 	   }
 
 	   /**
-		* Cette méthode retourne un rapport par son numéro
+		* Cette mÃ©thode retourne un rapport par son numÃ©ro
 		* @param int $num
 		* @return array|null
 		*/
@@ -96,7 +96,7 @@
 
 		   $query = $this->db->query($sql, array($num));
 
-		   if ($query->num_rows() > 0) { //si la requete retourne plusieur résultat
+		   if ($query->num_rows() > 0) { //si la requete retourne plusieur rÃ©sultat
 			   $rapport = $query->row();
 		   }
 			return $rapport;
@@ -104,6 +104,20 @@
 
 	   // HISTORIQUE DES RAPPORT PAR REGION
    
+	   /**
+	    * fonction qui selectionne les dates de visite de la région
+	    */
+	   
+	   public function getDate($reg_code = NULL){
+	   	$sql = 'SELECT RAP_DATE, VIS_NOM
+	   			FROM rapport_visite, visiteur, region,travailler
+	   			WHERE rapport_visite.VIS_MATRICULE = visiteur.VIS_MATRICULE
+	   			AND region.REG_CODE=travailler.REG_CODE
+	   			AND region.REG_CODE = ?
+	   			ORDER BY RAP_DATE';
+	   	$query = $this->db->query($sql, array($reg_code));
+	   	return $query->result();
+	   }
    }
     
     ?>
