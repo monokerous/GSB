@@ -110,10 +110,10 @@
 	   
 	   public function getDate($reg_code = NULL){
 	   	$sql = 'SELECT RAP_DATE, VIS_NOM
-	   			FROM rapport_visite, visiteur, region,travailler
+	   			FROM rapport_visite, visiteur, travailler
 	   			WHERE rapport_visite.VIS_MATRICULE = visiteur.VIS_MATRICULE
-	   			AND region.REG_CODE=travailler.REG_CODE
-	   			AND region.REG_CODE = ?
+	   			AND visiteur.VIS_MATRICULE=travailler.VIS_MATRICULE
+	   			AND travailler.REG_CODE = ?
 	   			ORDER BY RAP_DATE';
 	   	$query = $this->db->query($sql, array($reg_code));
 	   	return $query->result();
