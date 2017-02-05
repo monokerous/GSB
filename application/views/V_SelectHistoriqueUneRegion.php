@@ -6,26 +6,8 @@
 	<meta charset="UTF-8">
 </head>
 <body>
-<header class="header-fixed">
-	<div class="header-limiter">
-		
-            <h1><img src="<?php echo base_url('css/logoGSB.png'); ?>" id="logoGSB" alt="Laboratoire Galaxy-Swiss Bourdin" title="Laboratoire Galaxy-Swiss Bourdin" /></h1>	
-		
 
-		<nav>
-	
-		
-			<a href=<?php echo site_url('nouveauRapportVisiteurRegion/selectUneRegion'); ?> >Nouveau rapport visite par région</a>
-			<a href="<?php echo site_url('historiqueRapportVisiteurRegion/selectUneRegion'); ?>" class="selected">Historique des rapports par région</a>
-            <a href="#">Comptes-Rendus</a>
-			<a href="<?php echo site_url('nouveauRapportVisiteurRegion/selectUneRegion'); ?>" >Visiteur</a>
-			<a href="<?php echo site_url('praticien/index'); ?>" >Praticien</a>
-			<a href="<?php echo site_url('medicament/index'); ?>">Medicaments</a>
-			<a href="#">Quitter</a>
-
-		</nav>
-	</div>
-</header>
+<?php $this->load->view('include/header'); ?>
 
  <form method="post" action='<?php echo site_url('historiqueRapportVisiteurRegion/selectUneDate');?>' class="form-horizontal" id = "formMedicament">
          <fieldset>

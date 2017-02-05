@@ -67,6 +67,27 @@ if ( ! function_exists('base_url'))
 		return $CI->config->base_url($uri);
 	}
 }
+/**
+ * Is URL
+ * Cette function permet de retourner un boolean si l'url correspondant passer en paramétre est correcte
+ * @access	public
+ * @param string $uri
+ * @return bool
+ */
+if ( ! function_exists('is_url')){
+
+	function is_url($uri = '')
+	{
+		$actual_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+
+		$bool = false;
+		if($actual_link==site_url($uri)){
+			$bool = true;
+		}
+		return $bool;
+	}
+}
+
 
 // ------------------------------------------------------------------------
 
