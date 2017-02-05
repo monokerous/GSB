@@ -14,11 +14,15 @@
 
 		<nav>
 	
+			
 			<a href=<?php echo site_url('nouveauRapportVisiteurRegion/selectUneRegion'); ?> >Nouveau rapport visite par région</a>
-			<a href="<?php echo site_url('praticien/index'); ?>" >Historique des rapports par région</a>
-                        
+			<a href="<?php echo site_url('historiqueRapportVisiteurRegion/selectUneRegion'); ?>">Historique des rapports par région</a>
+            <a href="#">Comptes-Rendus</a>
+			<a href="<?php echo site_url('nouveauRapportVisiteurRegion/selectUneRegion'); ?>" >Visiteur</a>
+			<a href="<?php echo site_url('praticien/index'); ?>" >Praticien</a>
 			<a href="<?php echo site_url('medicament/index'); ?>">Medicaments</a>
 			<a href="#">Quitter</a>
+
 
 		</nav>
 	</div>

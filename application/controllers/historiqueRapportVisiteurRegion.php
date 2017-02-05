@@ -32,6 +32,7 @@ class HistoriqueRapportVisiteurRegion extends CI_Controller
 	function selectUneDate(){
 		$data = $this->_data_defaut;
 		$data['queryDate'] = $this->Modele->getDate($data['regions']);
+	//	$date['queryPlageDeDate'] = $this->selectUnePlageDeDate($data['regions'], $data['dateDebut'], $data['dateFin']);
 		$this->load->view('V_SelectHistoriqueUneRegion.php',$data);
 	}
 	
