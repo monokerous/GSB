@@ -22,8 +22,10 @@
            
             </select>
             <input class="btn" type="submit" value="Rechercher" />
-            
-            
+            </form>
+              </fieldset>
+ 
+            <br><br><br>
             <?php 
             		/* On r�cup�re le praticiens dans  */
             if(isset($_POST['practiciens'])){
@@ -33,34 +35,42 @@
                 $practicien = $item->PRA_NOM.' '.$item->PRA_PRENOM;
                 	
                    if($practicien == $_POST['practiciens']) { ?>
-		                <form id="formMedicament"> 
-		                
+		                	<table>
+
+	  					<tr>
+				  		
+				  		<th>Numero du Praticien</th>
+				  		<th>Nom du Praticien</th>
+				  		<th>Prenom du Praticien</th>
+				  		<th>Adresse du Praticien</th>
+				  		<th>Code postal du Praticien</th>
+				  		<th>Ville du Praticien</th>
+				  		<th>Coefficient Nortoriété</th>
+				  		<th>Type code Praticien</th>
+				  		
+					  	</tr>
+						
+					<tr>
+							<td><?php echo $item->PRA_NUM; ?></td>
+							<td><?php echo $item->PRA_NOM;?></td>
+							<td><?php echo $item->PRA_PRENOM;?></td>
+							<td><?php echo $item->PRA_ADRESSE;?></td>
+							<td><?php echo $item->PRA_CP;?></td>
+							<td><?php  echo $item->PRA_VILLE;?></td>
+							<td><?php echo $item->PRA_COEFNOTORIETE;?></td>
+							<td><?php echo $item->TYP_CODE;?></td>
+							
+							
+
+							</td>
+
+					</tr>
 		 
-                      		<p></p>
-		                	<br>
-			                <label class="titre">NUMERO :</label><label  name="PRA_NUM"  ><?php echo $item->PRA_NUM ?></label>
-			                <br>
-			                <label class="titre">NOM :</label><label name="PRA_NOM" ><?php echo $item->PRA_NOM ?></label>
-			                <br>
-			                <label class="titre">PRENOM :</label><label name="PRA_PRENOM" ><?php echo $item->PRA_PRENOM ?></label>
-			                <br>
-			                <label class="titre">ADRESSE :</label><label  name="PRA_ADRESSE"  ><?php echo $item->PRA_ADRESSE ?></label>
-			                <br>
-			                <label class="titre">CODE POSTAL :</label><label  name="PRA_CP" ><?php echo $item->PRA_CP ?></label>
-			                <br>
-			                <label class="titre">VILLE :</label><label name="PRA_VILLE"><?php echo $item->PRA_VILLE?></label>
-			                <br>
-			                <label class="titre">COEFF. NOTORIETE :</label><label  name="PRA_COEFNOTORIETE"  ><?php echo $item->PRA_COEFNOTORIETE ?></label>
-			                <br>
-			                <label class="titre">TYPE CODE :</label><label  name="TYP_CODE" ><?php echo $item->TYP_CODE ?></label>
-			                <br>
-			               
-		                </form>		
+		              </table>  	
                 <?php }
             }
        }?>	
-            </fieldset>
-        </form>
- 
+          
+        
 </body>
 </html>

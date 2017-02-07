@@ -82,7 +82,7 @@
        	<font color="teal"><center>
        	<br><br>
        	<?php
-       	echo  " aucun date disponible pour cette région !" ;
+       	echo  " aucune date disponible pour cette région !" ;
        	?>
        	</center></font >
        	<?php
