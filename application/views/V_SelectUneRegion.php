@@ -31,7 +31,7 @@
  </form>
 <?php 
             		/* On r�cup�re le praticiens dans  */
-            if($regions){ ?>
+            if($regions &&  $queryRapport != NULL){ ?>
 
             	<table>
 
@@ -79,7 +79,14 @@
 				<?php
        		}
        		else{
-       			echo "aucune fiche de frais";
+       			?>
+       			<font color="teal"><center>
+       			<br><br>
+       			<?php
+       			echo  " aucun rapport de visite pour cette région !" ;
+       			?>
+       			</center></font >
+       			<?php
        		}
        ?>
 

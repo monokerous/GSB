@@ -33,7 +33,7 @@
  
 <?php 
 
-	if ($regions){
+	if ($regions && $queryDate != NULL){
 		?>
 		 <fieldset>
 		 	 <legend>Selectionnez une Date </legend>
@@ -75,7 +75,20 @@
 		<input class="btn" type="submit" value="Rechercher" />
 		</fieldset>
 		    
-		<?php } ?>
+		<?php 
+	}
+	else{
+       	?>
+       	<font color="teal"><center>
+       	<br><br>
+       	<?php
+       	echo  " aucun date disponible pour cette région !" ;
+       	?>
+       	</center></font >
+       	<?php
+       	}
+
+?>
 		
 					
        
