@@ -41,6 +41,6 @@
 $route['default_controller'] = "Welcome";
 $route['404_override'] = '';
 $route['NouveauRapportVisiteurRegion/unRapportDeVisite/{:any}'] = "NouveauRapportVisiteurRegion/unRapportDeVisite";
-
+$route['historiqueRapportVisiteurRegion/selectUnrapport/{:any}'] = "historiqueRapportVisiteurRegion/selectUnrapport";
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

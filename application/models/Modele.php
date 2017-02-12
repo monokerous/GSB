@@ -109,7 +109,7 @@
 	    */
 	   
 	   public function getDate($reg_code = NULL){
-	   	$sql = 'SELECT RAP_DATE, VIS_NOM
+	   	$sql = 'SELECT RAP_DATE, VIS_NOM, RAP_NUM
 	   			FROM rapport_visite, visiteur, travailler
 	   			WHERE rapport_visite.VIS_MATRICULE = visiteur.VIS_MATRICULE
 	   			AND visiteur.VIS_MATRICULE=travailler.VIS_MATRICULE
@@ -118,16 +118,21 @@
 	   	$query = $this->db->query($sql, array($reg_code));
 	   	return $query->result();
 	   }
-	 
-	 public function getUnRapportDate($date){
+
+	   /**
+		* Cette méthode pemet de recherchert un rapport par rapport à sa date
+		* @param string $idRapport
+		* @return null|array
+		*/
+	 public function getUnRapport($idRapport){
 
 	 	 $rapport = null;
 		   $sql = 'SELECT * 
 		   		   FROM rapport_visite, visiteur
 		   		   WHERE rapport_visite.VIS_MATRICULE = visiteur.VIS_MATRICULE
-		   		   AND rapport_visite.RAP_DATE=?';
+		   		   AND rapport_visite.RAP_NUM=?';
 
-		   $query = $this->db->query($sql, array($date));
+		   $query = $this->db->query($sql, array($idRapport));
 
 		   if ($query->num_rows() > 0) { //si la requete retourne plusieur rÃ©sultat
 			   $rapport = $query->row();

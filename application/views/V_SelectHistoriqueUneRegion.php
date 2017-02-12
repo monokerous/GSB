@@ -31,36 +31,22 @@
 		 </fieldset>
  </form>
 
-
- 	<form method="post" action='' class="form-horizontal" id = "formMedicament">
 	<?php
 	if ($regions && $queryDate != NULL){
 		?>
-		 <fieldset>
-		 	 <legend>Selectionnez une Date </legend>
-		 	 
-		 	 <!-- SELECTIONNER UNE DATE DE DEBUT  -->
-               <label class="control-label">Date : </label>
-               
-         <select name="dates">
-		<?php 
-
-		foreach ($queryDate as $item){
-			
-			$selected = '';
-			if($dates==$item->RAP_DATE){
-				$selected2 = 'selected';
+		<table>
+			<?php
+			foreach ($queryDate as $item){
+				?>
+				<tr>
+					<td>
+						<a href="<?php echo site_url('historiqueRapportVisiteurRegion/selectUnrapport/'.$item->RAP_NUM); ?>" style="padding:6px 0 6px 0; font:bold 13px Arial; background:#666B85;color:#4BB5C1;border-radius:2px; width:70px;border:none;" ><?php echo $item->RAP_DATE; ?></a>
+					</td>
+				</tr>
+				<?php
 			}
-			
-		 echo '<option>'.$item->RAP_DATE.'</option>';
-			//echo $item->RAP_DATE. ' - '. $item->VIS_NOM.'<br>';
-		}
-		?>
-		</select> 
-		
-		<input class="btn" type="submit" formaction="<?php echo site_url('HistoriqueRapportVisiteurRegion/selectUnrapport/'.$item->RAP_DATE); ?> "  value="Rechercher" />
-		</fieldset>
-	</form>
+			?>
+		</table>
 	<?php
 	}
 	else{

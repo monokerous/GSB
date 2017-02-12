@@ -31,15 +31,23 @@ class HistoriqueRapportVisiteurRegion extends CI_Controller
 
 	function selectUneDate(){
 		$data = $this->_data_defaut;
+
 		$data['queryDate'] = $this->Modele->getDate($data['regions']);
+
 		$this->load->view('V_SelectHistoriqueUneRegion.php',$data);
 	}
 
-	function selectUnrapport($idDate){
+    /**
+     * @param string $idDate
+     */
+	function selectUnrapport($idRapport){
+
 		 $this->load->model('Modele');
 		$data = array();
-		$rapport = $this->Modele->getUnRapportDate($idDate);
+		$rapport = $this->Modele->getUnRapport($idRapport);
         if(is_null($rapport)){
+            //echo $idDate;
+
             redirect('/HistoriqueRapportVisiteurRegion/index', 'refresh');
         }
         $data["rapport"] = $rapport;
