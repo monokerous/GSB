@@ -65,11 +65,12 @@
 							<td><?php echo $item->MED_DEPOTLEGAL;?></td>
 							<td><?php echo $item->MED_NOMCOMMERCIAL;?></td>
 							<td>
-							<a style="text-decoration:underline;color:#00F;" href="<?php echo site_url('NouveauRapportVisiteurRegion/unRapportDeVisite/'.$item->RAP_NUM); ?>">rechercher</a>
+							<a style="padding:6px 0 6px 0; font:bold 13px Arial; background:#666B85;color:#4BB5C1;border-radius:2px; width:70px;border:none;" href="<?php echo site_url('NouveauRapportVisiteurRegion/unRapportDeVisite/'.$item->RAP_NUM); ?>">rechercher</a>
 
 							</td>
 
 					</tr>
+				
 					<?php
 
 				}

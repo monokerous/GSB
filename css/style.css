@@ -265,15 +265,7 @@ table, td a {
 	opacity: 0.9;
 
       }
-.bouton {
-	padding:6px 0 6px 0;
-	font:bold 13px Arial;
-	background:#666B85;
-	color:#4BB5C1;
-	border-radius:2px;
-	width:100px;
-	border:none;
-}
+
 th:first-child {
   border-top-left-radius:3px;
 }

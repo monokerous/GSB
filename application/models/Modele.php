@@ -118,24 +118,24 @@
 	   	$query = $this->db->query($sql, array($reg_code));
 	   	return $query->result();
 	   }
-	   // tentative de requete pour faire une plage de date mais qui ne fonctionne surement pas 
-	   public function selectUnePlageDeDate($date_début = NULL, $date_fin = NULL, $reg_code = NULL){
-	   	$sql = 'SELECT visiteur.VIS_MATRICULE
-	   			FROM visiteur, rapport_visite, region, travailler
-	   			WHERE rapport_visite.VIS_MATRICULE = visiteur.VIS_MATRICULE
-	   			AND region.REG_CODE=travailler.REG_CODE
-	   			AND region.REG_CODE = ?
-	   			LEFT JOIN
-	   			( 
-	   				SELECT VIS_MATRICULE, count(DISTINCT RAP_DATE) AS nbDateRapport
-	   				FROM rapport_visite
-	   				WHERE RAP_DATE BETWEEN $date_début AND $date_fin
-	   				GROUP BY VIS_MATRICULE
-	   			) rapport_visite ON visiteur.VIS_MATRICULE = rapport_visite.VIS_MATRICULE
-	   			WHERE rapport_visite.VIS_MATRICULE IS NULL OR rapport_visite.nbDateRapport < datediff( $date_début, $date_fin ) + 1 ';
-	   	$query = $this->db->query($sql, array($date_début,$date_fin, $reg_code));
-	   	return $query->result();
+	 
+	 public function getUnRapportDate($date){
+
+	 	 $rapport = null;
+		   $sql = 'SELECT * 
+		   		   FROM rapport_visite, visiteur
+		   		   WHERE rapport_visite.VIS_MATRICULE = visiteur.VIS_MATRICULE
+		   		   AND rapport_visite.RAP_DATE=?';
+
+		   $query = $this->db->query($sql, array($date));
+
+		   if ($query->num_rows() > 0) { //si la requete retourne plusieur rÃ©sultat
+			   $rapport = $query->row();
+		   }
+			return $rapport;
 	   }
+
+	 
    }
     
     ?>

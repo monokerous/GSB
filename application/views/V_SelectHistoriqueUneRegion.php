@@ -30,16 +30,17 @@
             <input class="btn" type="submit" value="Rechercher" />
 		 </fieldset>
  </form>
- 
-<?php 
 
+
+ 	<form method="post" action='<?php echo site_url('HistoriqueRapportVisiteurRegion/selectUnrapport/'.$item->RAP_DATE); ?>' class="form-horizontal" id = "formMedicament">
+	<?php
 	if ($regions && $queryDate != NULL){
 		?>
 		 <fieldset>
 		 	 <legend>Selectionnez une Date </legend>
 		 	 
 		 	 <!-- SELECTIONNER UNE DATE DE DEBUT  -->
-               <label class="control-label">Date Debut: </label>
+               <label class="control-label">Date : </label>
                
          <select name="dates">
 		<?php 
@@ -55,27 +56,12 @@
 			//echo $item->RAP_DATE. ' - '. $item->VIS_NOM.'<br>';
 		}
 		?>
-		
-		<!--  SELECTIONNER UNE DATE DE FIN -->
-		<!--  TROUVER LE MOYEN DE FAIRE 01-01 au 31-12 (il faut afficher les rapports pour toutes les années ?) -->
-		<label class="control-label">Date Fin: </label>
-		<?php 
-		
-		foreach ($queryDate as $item){
-				
-			$selected = '';
-			if($dates==$item->RAP_DATE){
-				$selected3 = 'selected';
-			}
-			
-			echo '<option>'.$item->RAP_DATE.'</option>';
-		}
-		?>
 		</select> 
-		<input class="btn" type="submit" value="Rechercher" />
+		
+		<input class="btn" type="submit"   value="Rechercher" />
 		</fieldset>
-		    
-		<?php 
+	</form>
+	<?php
 	}
 	else{
        	?>
