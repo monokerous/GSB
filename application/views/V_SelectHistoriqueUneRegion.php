@@ -32,7 +32,7 @@
  </form>
 
 
- 	<form method="post" action='<?php echo site_url('HistoriqueRapportVisiteurRegion/selectUnrapport/'.$item->RAP_DATE); ?>' class="form-horizontal" id = "formMedicament">
+ 	<form method="post" action='' class="form-horizontal" id = "formMedicament">
 	<?php
 	if ($regions && $queryDate != NULL){
 		?>
@@ -58,7 +58,7 @@
 		?>
 		</select> 
 		
-		<input class="btn" type="submit"   value="Rechercher" />
+		<input class="btn" type="submit" formaction="<?php echo site_url('HistoriqueRapportVisiteurRegion/selectUnrapport/'.$item->RAP_DATE); ?> "  value="Rechercher" />
 		</fieldset>
 	</form>
 	<?php
