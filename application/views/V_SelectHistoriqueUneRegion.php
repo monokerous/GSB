@@ -30,9 +30,30 @@
             <input class="btn" type="submit" value="Rechercher" />
 		 </fieldset>
  </form>
-
-	<?php
+<?php
 	if ($regions && $queryDate != NULL){
+?>
+	<form method="get" action='<?php echo site_url('historiqueRapportVisiteurRegion/selectUnrapport/'.$item->RAP_NUM);?>' class="form-horizontal" id = "formMedicament">
+		<fieldset>
+            <legend>Selectionnez une Date</legend>
+            <label class="control-label">Date : </label>
+              
+        <select name="dates">
+        <?php
+		foreach ($queryDate as $item){
+			$select = '';
+			if($dates==$item->RAP_DATE){
+				$select = 'select';
+			}
+			echo '<option value="'.$item->RAP_DATE.'" '.$select.'>'. $item->RAP_DATE.'</option>';
+		} ?>		
+		</select>
+        	<input class="btn" type="submit" value="Rechercher" formmethod="post" formaction="<?php echo site_url('historiqueRapportVisiteurRegion/selectUnrapport/'.$item->RAP_NUM); ?>" > <?php echo $item->RAP_DATE; ?>/>
+		</fieldset>
+	</form>
+<?php
+}
+/*	if ($regions && $queryDate != NULL){
 		?>
 		<table>
 			<?php
@@ -46,9 +67,9 @@
 				<?php
 			}
 			?>
-		</table>
+		</table> 
 	<?php
-	}
+	} */
 	else{
        	?>
        	<font color="teal"><center>

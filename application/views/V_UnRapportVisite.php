@@ -15,10 +15,11 @@
 
 <p></p>
 	<div>
+	<center>
 		<?php
 
 		
-			//echo $rapport->RAP_DATE.'<br>';
+			echo $rapport->RAP_DATE.'<br>';
 			echo $rapport->PRA_NUM.'<br>';
 			//echo $rapport->PRA_COEFNOTORIETE.'<br>';		
 			echo '<pre>'.$rapport->RAP_MOTIF.'</pre>';
@@ -26,5 +27,7 @@
 			//echo $rapport->MED_DEPOTLEGAL.'<br>';
 
 		?>
+		<center>
 	</div>
+		<a href="<?php echo site_url('pdf/index/'.$rapport->RAP_NUM); ?>" style="padding:6px 0 6px 0; font:bold 13px Arial; background:#666B85;color:#4BB5C1;border-radius:2px; width:70px;border:none;" ><?php echo"générer le PDF"; ?></a>
 </body>

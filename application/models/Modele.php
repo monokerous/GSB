@@ -140,8 +140,21 @@
 			return $rapport;
 	   }
 
-	 
-   }
+	   //PDF
+	   function getPDFRapportVisite() {
+
+
+	   //$userId = $this->session->userdata('VIS_MATRICULE');
+	   //$Id = $this->session->userdata('VIS_MATRICULE');
+	    $data = array();
+	    $sql = 'SELECT * 
+	    		FROM rapport_visite, visiteur
+	    		WHERE rapport_visite.VIS_MATRICULE = visiteur. VIS_MATRICULE';
+	  	$query = $this->db->query($sql);
+	   	return $query->result();
+
+    } 
+}
     
-    ?>
+?>
      

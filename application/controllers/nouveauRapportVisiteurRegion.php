@@ -47,7 +47,4 @@ class NouveauRapportVisiteurRegion extends CI_Controller
 		$this->load->view('V_UnRapportVisite',$data);
 	}
 	
-	
-
-	
 }
