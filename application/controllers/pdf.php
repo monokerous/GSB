@@ -6,7 +6,7 @@ class PDF extends CI_Controller {
 
 
 
-	public function index()
+	public function index($id = 0)
 
     {
 
@@ -23,14 +23,13 @@ class PDF extends CI_Controller {
 
 	    $this->load->model('Modele');
 
-	    $data['pdfRapportVisite'] = $this->Modele->getPDFRapportVisite();
-
-
 	    $data = array(
-	       	'title' => 'Rapport de visite',
+	    	'title' => 'Rapport de visite',
 	    	'message' => 'Rapport de visite'
 	    );
- 
+
+	    $rapportVisite = $this->Modele->getPDFRapportVisite($id);
+        $data["rapportVisitePDF"] = $rapportVisite;
 
 	    $this->html2pdf->html($this->load->view('V_pdf', $data, true));
 	    if($this->html2pdf->create('save')) {	

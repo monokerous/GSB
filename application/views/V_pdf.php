@@ -52,16 +52,34 @@
 <body>
 
 
-<h1><?php  echo $title; ?></h1>
-<?php
-if (!empty($pdfRapportVisite)){
+<h1><?php  echo $title; ?> de <?php echo $rapportVisitePDF->VIS_NOM?> </h1>
+<div align="right">
 
-echo $pdfRapportVisite->RAP_DATE.'</p>';
+<?php
+if (!empty($rapportVisitePDF)){
+
+echo "Date du rapport : ";
+echo $rapportVisitePDF->RAP_DATE.'</p>';
 }
 ?>
-<p>Tous les éléments d'un rapport de visite.</p>
-<code><?php echo $message; ?></code>
+</div>
+<p>Numéro de rapport: <?php echo $rapportVisitePDF->RAP_NUM;?></p>
+<code>
 
+<?php
+ echo $message.'<br>';
+ echo "Numéro du praticien : ";
+ echo $rapportVisitePDF->PRA_NUM.'<br>';
+ echo "Motif du rapport : ";
+ echo $rapportVisitePDF->RAP_MOTIF.'<br>';
+ echo "Bilan du rapport : ";
+ echo $rapportVisitePDF->RAP_BILAN.'<br>';
+?>
+	
+
+</code>
+<h1></h1>
+Jeanne Bertoux
 </body>
 
 </html>

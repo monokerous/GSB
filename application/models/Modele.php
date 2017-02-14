@@ -141,20 +141,25 @@
 	   }
 
 	   //PDF
-	   function getPDFRapportVisite() {
+	   function getPDFRapportVisite($id) {
 
 
 	   //$userId = $this->session->userdata('VIS_MATRICULE');
 	   //$Id = $this->session->userdata('VIS_MATRICULE');
-	    $data = array();
-	    $sql = 'SELECT * 
-	    		FROM rapport_visite, visiteur
-	    		WHERE rapport_visite.VIS_MATRICULE = visiteur. VIS_MATRICULE';
-	  	$query = $this->db->query($sql);
-	   	return $query->result();
+ 		   $rapport = null;
+		   $sql = 'SELECT * 
+		   		   FROM rapport_visite, visiteur
+		   		   WHERE rapport_visite.VIS_MATRICULE = visiteur.VIS_MATRICULE
+		   		   AND rapport_visite.RAP_NUM=?';
 
-    } 
-}
+		   $query = $this->db->query($sql, array($id));
+
+		   if ($query->num_rows() > 0) { //si la requete retourne plusieur rÃ©sultat
+			   $rapport = $query->row();
+		   }
+			return $rapport;
+	   }
+	}
     
 ?>
      
