@@ -4,6 +4,13 @@
 	<title>Select region</title>
 	<link rel="stylesheet" href="<?php echo base_url("css/style.css"); ?>" />
 	<meta charset="UTF-8">
+
+	<script language="javascript"> function voirSelection(dates){
+     var valeur = dates.options[dates.selectedIndex].value;
+     valeur =  document.getElementById("formDate").submit();
+}
+
+	</script> 
 </head>
 <body>
 
@@ -33,7 +40,11 @@
 <?php
 	if ($regions && $queryDate != NULL){
 ?>
-	<form method="get" action='<?php echo site_url('historiqueRapportVisiteurRegion/selectUnrapport/'.$item->RAP_NUM);?>' class="form-horizontal" id = "formMedicament">
+
+
+
+
+	<form method="post" class="form-horizontal" id = "formDate" >
 		<fieldset>
             <legend>Selectionnez une Date</legend>
             <label class="control-label">Date : </label>
@@ -48,7 +59,7 @@
 			echo '<option value="'.$item->RAP_DATE.'" '.$select.'>'. $item->RAP_DATE.'</option>';
 		} ?>		
 		</select>
-        	<input class="btn" type="submit" value="Rechercher" formmethod="post" formaction="<?php echo site_url('historiqueRapportVisiteurRegion/selectUnrapport/'.$item->RAP_NUM); ?>" > <?php echo $item->RAP_DATE; ?>/>
+        	<input class="btn" type="submit" value="Rechercher" onclick="voirSelection(dates)"  formaction="<?php echo site_url('historiqueRapportVisiteurRegion/selectUnrapport/'.$item->RAP_NUM); ?> " />
 		</fieldset>
 	</form>
 <?php

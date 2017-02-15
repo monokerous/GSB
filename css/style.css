@@ -17,6 +17,39 @@
 	margin: 0 auto;
 }
 
+/* formDate */
+#formDate
+{
+	width: 60%;
+}
+
+#formDate p
+{
+	margin: 2px 0;
+}
+
+/* fieldset , legend */
+#formDate fieldset
+{
+	margin-bottom: 10px;
+	border: #CCC 1px solid;
+}
+
+#formDate fieldset:hover
+{
+	background-color: #FFF;
+}
+
+#formDate fieldset legend
+{
+	padding: 0 10px;
+	border-left: #CCC 1px solid;
+	border-right: #CCC 1px solid;
+	font-size: 1.2em;
+	color: #999;
+	font:16px Arial, Helvetica, sans-serif;
+}
+
 /* formMedicament */
 #formMedicament
 {
