@@ -7,7 +7,10 @@
 
 	<script language="javascript"> function voirSelection(dates){
      var valeur = dates.options[dates.selectedIndex].value;
-     valeur =  document.getElementById("formDate").submit();
+     alert(valeur);
+    
+   
+    // valeur =  document.getElementById("formDate").submit();
 }
 
 	</script> 
@@ -59,7 +62,7 @@
 			echo '<option value="'.$item->RAP_DATE.'" '.$select.'>'. $item->RAP_DATE.'</option>';
 		} ?>		
 		</select>
-        	<input class="btn" type="submit" value="Rechercher" onclick="voirSelection(dates)"  formaction="<?php echo site_url('historiqueRapportVisiteurRegion/selectUnrapport/'.$item->RAP_NUM); ?> " />
+        	<input class="btn" type="submit" value="Rechercher"  onclick="voirSelection(dates)"   formaction="<?php echo site_url('historiqueRapportVisiteurRegion/selectUnrapport/'.$item->RAP_NUM); ?> " />
 		</fieldset>
 	</form>
 <?php
